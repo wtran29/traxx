@@ -1,7 +1,7 @@
 import graphene
 from graphene_django import DjangoObjectType
 
-from tracks.models import Track
+from tracks.models import Track, Like
 
 
 class TrackType(DjangoObjectType):
