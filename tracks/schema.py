@@ -22,13 +22,13 @@ class Query(graphene.ObjectType):
 
     def resolve_tracks(self, info, search=None):
         if search:
-            filter = (
+            filtered = (
                 Q(title__icontains=search) |
                 Q(description__icontains=search) |
                 Q(url__icontains=search) |
                 Q(traxx_user__username__icontains=search)
             )
-            return Track.objects.filter(filter)
+            return Track.objects.filter(filtered)
         return Track.objects.all()
 
     def resolve_likes(self, info):
