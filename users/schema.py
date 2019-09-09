@@ -19,7 +19,7 @@ class Query(graphene.ObjectType):
         user = info.context.user
         if user.is_anonymous:
             raise Exception('You are not logged in!')
-        
+
         return user
 
 
